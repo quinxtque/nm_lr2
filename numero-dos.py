@@ -1,7 +1,5 @@
 from math import sqrt
 
-def gg_wp(x):
-    return "GG WP"
 def g(x):
     return sqrt((1 - x ** 3) / 3)
 
