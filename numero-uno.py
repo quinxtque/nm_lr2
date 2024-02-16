@@ -1,7 +1,4 @@
 from math import log
-
-def gg(x):
-    return "GG WP"
 def f(x):
     return x * log(x + 1) - 1
 def f1(x):
@@ -21,11 +18,10 @@ x = [a]
 y = [(b + a) / 2]
 err = []
 
-
 while True:
     err.append(abs(x[n] - y[n]))
 
-    print(f'{n:>5g}  {x[n]:>5g}  {y[n]:>5g}  {err[n]:>5.5f}')
+    print(f'{n:>5g}  {x[n]:>5g}  {y[n]:>5g}  {err[n]:>5.5f}'.replace('.', ','))
 
     y.append(y[n] - f(y[n]) / f1(y[n]))
     x.append(x[n] - (y[n] - x[n]) / (f(y[n]) - f(x[n])) * f(x[n]))
@@ -36,7 +32,7 @@ while True:
     n += 1
 
 t = (x[len(x) - 1] + y[len(y) - 1]) / 2
-print(f't = {t:.5f} +- {err[len(err) - 1] / 2:.5f}')
+print(f't = {t:.5f} +- {err[len(err) - 1] / 2:.5f}'.replace('.', ','))
 
 
 

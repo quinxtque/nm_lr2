@@ -26,7 +26,7 @@ while True:
     x.append(g(x[n - 1]))
     err.append(q * abs(x[n] - x[n - 1]) / (1 - q))
 
-    print(f'{n:>}  {x[n]:>.4f}  {err[n]:>.4f}')
+    print(f'{n:>}  {x[n]:>.5f}  {err[n]:>.5f}'.replace('.', ','))
 
     if err[n] < e:
         break
@@ -34,7 +34,7 @@ while True:
     n += 1
 
 t = (x[len(x) - 1]) / 2
-print(f't = {t:.5f} +- {err[len(err) - 1]:.5f}')
+print(f't = {t:.5f} +- {err[len(err) - 1]:.5f}'.replace('.', ','))
 
 
 
